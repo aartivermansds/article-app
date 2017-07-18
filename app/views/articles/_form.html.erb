@@ -25,14 +25,14 @@
   <div class="form-group">
     <%= f.label :description, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :description, :class => 'form-control' %>
+      <%= f.text_area :description, :class => 'form-control ckeditor'  %>
     </div>
     <%=f.error_span(:description) %>
   </div>
   <div class="form-group">
     <%= f.label :category_id, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :category_id, :class => 'form-control' %>
+      <%= f.select :category_id, options_for_select(Category.all.collect{ |u| [u.name, u.id] }), {prompt: "Select Category"}, {class: "form-control"} %>
     </div>
     <%=f.error_span(:category_id) %>
   </div>
@@ -46,3 +46,10 @@
   </div>
 
 <% end %>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $(".ckeditor").ckeditor({
+
+    });
+  });
+</script>
