@@ -52,3 +52,4 @@ group :production do
 	gem "pg"
 end	
 gem "ckeditor" 
+gem 'devise'
