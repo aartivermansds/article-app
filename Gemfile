@@ -53,4 +53,5 @@ group :production do
 end	
 gem "ckeditor" 
 gem 'devise'
-gem 'friendly_id', '~> 5.1.0'
+gem 'friendly_id', '~> 5.0.0'
+gem 'cancancan', '~> 2.0'

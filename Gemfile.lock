@@ -41,6 +41,7 @@ GEM
       debug_inspector (>= 0.0.1)
     builder (3.2.3)
     byebug (9.0.6)
+    cancancan (2.0.0)
     ckeditor (4.2.4)
       cocaine
       orm_adapter (~> 0.5.0)
@@ -66,7 +67,7 @@ GEM
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.9.18)
-    friendly_id (5.1.0)
+    friendly_id (5.0.5)
       activerecord (>= 4.0.0)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
@@ -187,10 +188,11 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
+  cancancan (~> 2.0)
   ckeditor
   coffee-rails (~> 4.1.0)
   devise
-  friendly_id (~> 5.1.0)
+  friendly_id (~> 5.0.0)
   jbuilder (~> 2.0)
   jquery-rails
   pg
@@ -205,4 +207,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.15.2
+   1.15.3
