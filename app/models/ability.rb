@@ -7,6 +7,10 @@ class Ability
       user ||= User.new # guest user (not logged in)
       if user.role == "admin"
         can :manage, :all
+      elsif user.role == "member"
+        can [:read, :create], Article
+        can [:update, :destroy], Article, :user_id => user.id
+        can :read, Category
       else
         can :read, :all
       end
