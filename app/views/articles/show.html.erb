@@ -1,6 +1,7 @@
 <%- model_class = Article -%>
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+  <h3>Posted by : <%= @article.user.email %></h3>
 </div>
 
 <dl class="dl-horizontal">
@@ -11,6 +12,13 @@
   <dt><strong><%= model_class.human_attribute_name(:category_id) %>:</strong></dt>
   <dd><%= @article.category.try(:name) %></dd>
 </dl>
+
+<%= render @article.comments %>
+
+<div class="well">
+  <h1 class="text-center">Add a Comment</h1>
+</div>
+<%= render 'comments/form' %>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
               articles_path, :class => 'btn btn-default'  %>

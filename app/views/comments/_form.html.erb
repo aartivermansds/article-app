@@ -1,0 +1,12 @@
+<%= form_for([@article, @article.comments.build]) do |f| %>
+  
+  <%= f.hidden_field :user_id, value: current_user.id if user_signed_in? %>
+
+  <div class="form-group">
+    <%= f.label :post_a_comment %>
+    <%= f.text_area :comment_body, class: "form-control", rows: "7" %>
+  </div>
+  <div class="form-group">
+    <%= f.submit "Post Your Comment Now", class: "btn btn-primary btn-lg" %>
+  </div>
+<% end %>
